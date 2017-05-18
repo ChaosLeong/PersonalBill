@@ -1,4 +1,4 @@
-package org.xqj.bill.model.serializable;
+package org.chaos.fx.bill.model.serializable;
 
 import java.io.Serializable;
 

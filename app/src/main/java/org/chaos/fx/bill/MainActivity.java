@@ -1,4 +1,4 @@
-package org.xqj.bill;
+package org.chaos.fx.bill;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -26,11 +26,11 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
-import org.xqj.bill.model.BillItem;
+import org.chaos.fx.bill.model.BillItem;
 
 import java.util.Calendar;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
 
@@ -43,12 +43,12 @@ public class MainActivity extends AppCompatActivity implements
 
     private static final float RELATIVE_SIZE = 1.3f;
 
-    @Bind(R.id.toolbar) Toolbar mToolbar;
-    @Bind(R.id.tabs) TabLayout mTabLayout;
-    @Bind(R.id.view_pager) ViewPager mViewPager;
-    @Bind(R.id.date) TextView mDateTextView;
-    @Bind(R.id.income_btn) TextView mIncomeTextView;
-    @Bind(R.id.expense_btn) TextView mExpenseTextView;
+    @BindView(R.id.toolbar) Toolbar mToolbar;
+    @BindView(R.id.tabs) TabLayout mTabLayout;
+    @BindView(R.id.view_pager) ViewPager mViewPager;
+    @BindView(R.id.date) TextView mDateTextView;
+    @BindView(R.id.income_btn) TextView mIncomeTextView;
+    @BindView(R.id.expense_btn) TextView mExpenseTextView;
 
     private BillDetailsFragment mBillDetailsFragment;
     private BillPieChartFragment mBillPieChartFragment;

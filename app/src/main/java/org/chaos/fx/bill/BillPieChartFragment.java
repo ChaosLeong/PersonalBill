@@ -1,4 +1,4 @@
-package org.xqj.bill;
+package org.chaos.fx.bill;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -25,7 +25,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -35,9 +35,9 @@ import butterknife.ButterKnife;
 public class BillPieChartFragment extends DataFragment implements
         OnChartValueSelectedListener, RadioGroup.OnCheckedChangeListener {
 
-    @Bind(R.id.pie_chart) PieChart mPieChart;
-    @Bind(R.id.tips) TextView mTips;
-    @Bind(R.id.type_group) RadioGroup mTypeGroup;
+    @BindView(R.id.pie_chart) PieChart mPieChart;
+    @BindView(R.id.tips) TextView mTips;
+    @BindView(R.id.type_group) RadioGroup mTypeGroup;
 
     @Nullable
     @Override
@@ -56,11 +56,9 @@ public class BillPieChartFragment extends DataFragment implements
 
     private void initPieChart() {
         mPieChart.setUsePercentValues(true);
-        mPieChart.setDescription("");
         mPieChart.setExtraOffsets(15, 10, 15, 45);
         mPieChart.setDragDecelerationFrictionCoef(0.95f);
         mPieChart.setDrawHoleEnabled(true);
-        mPieChart.setHoleColorTransparent(true);
         mPieChart.setTransparentCircleColor(Color.WHITE);
         mPieChart.setTransparentCircleAlpha(110);
         mPieChart.setHoleRadius(45f);

@@ -1,4 +1,4 @@
-package org.xqj.bill;
+package org.chaos.fx.bill;
 
 import android.os.Bundle;
 import android.os.Environment;
@@ -13,11 +13,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.xqj.bill.model.BillItem;
-import org.xqj.bill.model.ConsumptionType;
-import org.xqj.bill.model.serializable.SerializableBillItem;
-import org.xqj.bill.model.serializable.SerializableConsumptionType;
-import org.xqj.bill.model.serializable.SerializeUtils;
+import org.chaos.fx.bill.model.BillItem;
+import org.chaos.fx.bill.model.ConsumptionType;
+import org.chaos.fx.bill.model.serializable.SerializableBillItem;
+import org.chaos.fx.bill.model.serializable.SerializableConsumptionType;
+import org.chaos.fx.bill.model.serializable.SerializeUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
 
@@ -42,10 +42,10 @@ public class BackupOrRestoreActivity extends AppCompatActivity implements View.O
     private static final String BACKUP_DIR = "PersonalBill";
     private static final String BACKUP_FILE = "bill.backup";
 
-    @Bind(R.id.status) TextView mStatusText;
-    @Bind(R.id.action_backup) Button mBackupBtn;
-    @Bind(R.id.action_restore) Button mRestoreBtn;
-    @Bind(R.id.toolbar) Toolbar mToolbar;
+    @BindView(R.id.status) TextView mStatusText;
+    @BindView(R.id.action_backup) Button mBackupBtn;
+    @BindView(R.id.action_restore) Button mRestoreBtn;
+    @BindView(R.id.toolbar) Toolbar mToolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

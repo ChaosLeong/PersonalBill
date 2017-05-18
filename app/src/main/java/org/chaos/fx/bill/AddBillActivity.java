@@ -1,4 +1,4 @@
-package org.xqj.bill;
+package org.chaos.fx.bill;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -27,8 +27,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.xqj.bill.model.BillItem;
-import org.xqj.bill.model.ConsumptionType;
+import org.chaos.fx.bill.model.BillItem;
+import org.chaos.fx.bill.model.ConsumptionType;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -36,7 +36,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
 
@@ -68,12 +68,12 @@ public class AddBillActivity extends AppCompatActivity implements DialogCreatabl
     private static final int DIALOG_DATE_PICKER = 1;
     private static final int DIALOG_ADD_CONSUMPTION_TYPE = 2;
 
-    @Bind(R.id.date) TextView mDateTextView;
-    @Bind(R.id.type_group) RadioGroup mTypeGroup;
-    @Bind(R.id.consumption_type) Spinner mConsumptionTypeSpinner;
-    @Bind(R.id.sum) EditText mSumEditText;
-    @Bind(R.id.note) EditText mNoteEditText;
-    @Bind(R.id.fab) FloatingActionButton mFab;
+    @BindView(R.id.date) TextView mDateTextView;
+    @BindView(R.id.type_group) RadioGroup mTypeGroup;
+    @BindView(R.id.consumption_type) Spinner mConsumptionTypeSpinner;
+    @BindView(R.id.sum) EditText mSumEditText;
+    @BindView(R.id.note) EditText mNoteEditText;
+    @BindView(R.id.fab) FloatingActionButton mFab;
 
     private DialogFragment mDialogFragment;
 

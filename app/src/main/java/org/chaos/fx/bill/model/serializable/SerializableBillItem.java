@@ -1,17 +1,13 @@
-package org.xqj.bill.model;
+package org.chaos.fx.bill.model.serializable;
 
-import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
+import java.io.Serializable;
 
 /**
- * 账单项,对应一条收入/支出记录
- *
  * @author Chaos
- *         2016/01/10.
+ *         2016/01/14.
  */
-public class BillItem extends RealmObject {
+public class SerializableBillItem implements Serializable {
 
-    @PrimaryKey
     private int id;
 
     private boolean income;// true 为收入

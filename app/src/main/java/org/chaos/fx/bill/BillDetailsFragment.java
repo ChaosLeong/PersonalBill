@@ -1,4 +1,4 @@
-package org.xqj.bill;
+package org.chaos.fx.bill;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -18,14 +18,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.xqj.bill.model.BillItem;
-import org.xqj.bill.widget.DividerItemDecoration;
+import org.chaos.fx.bill.model.BillItem;
+import org.chaos.fx.bill.widget.DividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -34,8 +34,8 @@ import butterknife.ButterKnife;
  */
 public class BillDetailsFragment extends DataFragment {
 
-    @Bind(R.id.details) RecyclerView mDetailsView;
-    @Bind(R.id.tips) TextView mNoDataTips;
+    @BindView(R.id.details) RecyclerView mDetailsView;
+    @BindView(R.id.tips) TextView mNoDataTips;
 
     private BillAdapter mBillAdapter;
     private int mIdxForDisplayedMenu;
@@ -265,10 +265,10 @@ public class BillDetailsFragment extends DataFragment {
 
         static class ViewHolder extends RecyclerView.ViewHolder {
 
-            @Bind(R.id.date) TextView date;
-            @Bind(R.id.msg) TextView msg;
-            @Bind(R.id.sum) TextView sum;
-            @Bind(R.id.type_img) ImageView typeImg;
+            @BindView(R.id.date) TextView date;
+            @BindView(R.id.msg) TextView msg;
+            @BindView(R.id.sum) TextView sum;
+            @BindView(R.id.type_img) ImageView typeImg;
 
             public ViewHolder(View itemView) {
                 super(itemView);

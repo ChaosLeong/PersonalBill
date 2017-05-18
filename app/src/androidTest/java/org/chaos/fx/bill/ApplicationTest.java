@@ -1,4 +1,4 @@
-package org.xqj.bill;
+package org.chaos.fx.bill;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

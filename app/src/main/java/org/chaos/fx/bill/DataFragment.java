@@ -1,4 +1,4 @@
-package org.xqj.bill;
+package org.chaos.fx.bill;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -6,8 +6,8 @@ import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
-import org.xqj.bill.model.BillItem;
-import org.xqj.bill.model.ConsumptionType;
+import org.chaos.fx.bill.model.BillItem;
+import org.chaos.fx.bill.model.ConsumptionType;
 
 import java.util.ArrayList;
 import java.util.List;

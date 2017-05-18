@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="org.xqj.bill"
+<manifest package="org.chaos.fx.bill"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -36,8 +36,8 @@
         <receiver android:name=".AlarmReceiver"
                   android:exported="false">
             <intent-filter>
-                <action android:name="org.xqj.bill.action.NOTIFY_TIME_CHANGED" />
-                <action android:name="org.xqj.bill.action.NOTIFY_ADD_BILL" />
+                <action android:name="org.chaos.fx.bill.action.NOTIFY_TIME_CHANGED" />
+                <action android:name="org.chaos.fx.bill.action.NOTIFY_ADD_BILL" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>

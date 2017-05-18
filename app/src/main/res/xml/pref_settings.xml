@@ -18,8 +18,8 @@
             android:key="backup_or_restore"
             android:title="@string/backup_or_restore">
             <intent
-                android:action="org.xqj.bill.action.BACKUP_OR_RESTORE"
-                android:targetClass="org.xqj.bill.BackupOrRestoreActivity"
+                android:action="action.BACKUP_OR_RESTORE"
+                android:targetClass="BackupOrRestoreActivity"
                 android:targetPackage="org.xqj.bill" />
         </Preference>
 

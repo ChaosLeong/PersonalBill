@@ -1,4 +1,4 @@
-package org.xqj.bill;
+package org.chaos.fx.bill;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;

@@ -1,4 +1,4 @@
-package org.xqj.bill;
+package org.chaos.fx.bill;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -21,15 +21,6 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Date;
-
-import static org.xqj.bill.PreferenceKeys.KEY_CHECK_FOR_UPDATE;
-import static org.xqj.bill.PreferenceKeys.KEY_ENABLE_REMIND_ADD_BILL;
-import static org.xqj.bill.PreferenceKeys.KEY_ENABLE_REMIND_EXCEEDING;
-import static org.xqj.bill.PreferenceKeys.KEY_HELP_AND_FEEDBACK;
-import static org.xqj.bill.PreferenceKeys.KEY_REMIND_ADD_BILL;
-import static org.xqj.bill.PreferenceKeys.KEY_REMIND_EXCEEDING;
-import static org.xqj.bill.PreferenceKeys.KEY_VIEW_MODE;
-import static org.xqj.bill.PreferenceKeys.KEY_DEFAULT_THEME;
 
 /**
  * 设置页面
@@ -101,36 +92,36 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref_settings);
 
-            mCheckForUpdatePref = findPreference(KEY_CHECK_FOR_UPDATE);
-            mEnableRemindAddBillPref = (SwitchPreference) findPreference(KEY_ENABLE_REMIND_ADD_BILL);
-            mRemindAddBillPref = findPreference(KEY_REMIND_ADD_BILL);
-            mEnableRemindExceedingPref = (SwitchPreference) findPreference(KEY_ENABLE_REMIND_EXCEEDING);
-            mRemindExceedingPref = (EditTextPreference) findPreference(KEY_REMIND_EXCEEDING);
-            mHelpAndFeedbackPref = findPreference(KEY_HELP_AND_FEEDBACK);
-            mViewModePref = (ListPreference) findPreference(KEY_VIEW_MODE);
-            mDefaultThemePref = (ListPreference) findPreference(KEY_DEFAULT_THEME);
+            mCheckForUpdatePref = findPreference(PreferenceKeys.KEY_CHECK_FOR_UPDATE);
+            mEnableRemindAddBillPref = (SwitchPreference) findPreference(PreferenceKeys.KEY_ENABLE_REMIND_ADD_BILL);
+            mRemindAddBillPref = findPreference(PreferenceKeys.KEY_REMIND_ADD_BILL);
+            mEnableRemindExceedingPref = (SwitchPreference) findPreference(PreferenceKeys.KEY_ENABLE_REMIND_EXCEEDING);
+            mRemindExceedingPref = (EditTextPreference) findPreference(PreferenceKeys.KEY_REMIND_EXCEEDING);
+            mHelpAndFeedbackPref = findPreference(PreferenceKeys.KEY_HELP_AND_FEEDBACK);
+            mViewModePref = (ListPreference) findPreference(PreferenceKeys.KEY_VIEW_MODE);
+            mDefaultThemePref = (ListPreference) findPreference(PreferenceKeys.KEY_DEFAULT_THEME);
 
             mCheckForUpdatePref.setSummary(
                     String.format(getString(R.string.version_name), BuildConfig.VERSION_NAME));
 
             mRemindAddBillPref.setEnabled(
-                    getPreferenceManager().getSharedPreferences().getBoolean(KEY_ENABLE_REMIND_ADD_BILL, false));
+                    getPreferenceManager().getSharedPreferences().getBoolean(PreferenceKeys.KEY_ENABLE_REMIND_ADD_BILL, false));
             Calendar hourCalendar = Calendar.getInstance();
             hourCalendar.clear();
             hourCalendar.set(Calendar.HOUR_OF_DAY, 10);
             mRemindAddBillPref.setSummary(DateFormat.getTimeFormat(getActivity()).format(new Date(
-                    getPreferenceManager().getSharedPreferences().getLong(KEY_REMIND_ADD_BILL, hourCalendar.getTimeInMillis()))));
+                    getPreferenceManager().getSharedPreferences().getLong(PreferenceKeys.KEY_REMIND_ADD_BILL, hourCalendar.getTimeInMillis()))));
 
             mRemindExceedingPref.setEnabled(
-                    getPreferenceManager().getSharedPreferences().getBoolean(KEY_ENABLE_REMIND_EXCEEDING, false));
+                    getPreferenceManager().getSharedPreferences().getBoolean(PreferenceKeys.KEY_ENABLE_REMIND_EXCEEDING, false));
             mRemindExceedingPref.setSummary(
                     getPreferenceManager().getSharedPreferences().getString(
-                            KEY_REMIND_EXCEEDING, getString(R.string.remind_exceeding_default_summary)));
+                            PreferenceKeys.KEY_REMIND_EXCEEDING, getString(R.string.remind_exceeding_default_summary)));
 
             mViewModePref.setSummary(
-                    getPreferenceManager().getSharedPreferences().getString(KEY_VIEW_MODE, "月"));
+                    getPreferenceManager().getSharedPreferences().getString(PreferenceKeys.KEY_VIEW_MODE, "月"));
             mDefaultThemePref.setSummary(
-                    getPreferenceManager().getSharedPreferences().getString(KEY_DEFAULT_THEME, "粉红"));
+                    getPreferenceManager().getSharedPreferences().getString(PreferenceKeys.KEY_DEFAULT_THEME, "粉红"));
 
             mCheckForUpdatePref.setOnPreferenceClickListener(this);
             mHelpAndFeedbackPref.setOnPreferenceClickListener(this);
@@ -157,11 +148,11 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         @Override
         public boolean onPreferenceClick(Preference preference) {
             String key = preference.getKey();
-            if (KEY_CHECK_FOR_UPDATE.equals(key)) {
+            if (PreferenceKeys.KEY_CHECK_FOR_UPDATE.equals(key)) {
                 Toast.makeText(getActivity(), R.string.already_the_newest_version, Toast.LENGTH_SHORT).show();
-            } else if (KEY_HELP_AND_FEEDBACK.equals(key)) {
+            } else if (PreferenceKeys.KEY_HELP_AND_FEEDBACK.equals(key)) {
                 Toast.makeText(getActivity(), R.string.feature_is_not_yet_open, Toast.LENGTH_SHORT).show();
-            } else if (KEY_REMIND_ADD_BILL.equals(key)) {
+            } else if (PreferenceKeys.KEY_REMIND_ADD_BILL.equals(key)) {
                 removeTimePickerDialog();
                 showTimePickerDialog();
             }
@@ -171,18 +162,18 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
             String key = preference.getKey();
-            if (KEY_ENABLE_REMIND_ADD_BILL.equals(key)) {
+            if (PreferenceKeys.KEY_ENABLE_REMIND_ADD_BILL.equals(key)) {
                 mRemindAddBillPref.setEnabled((boolean) newValue);
                 mRemindAddBillPref.setSummary(DateFormat.getTimeFormat(getActivity()).format(new Date(
-                        getPreferenceManager().getSharedPreferences().getLong(KEY_REMIND_ADD_BILL, 0L))));
-            } else if (KEY_ENABLE_REMIND_EXCEEDING.equals(key)) {
+                        getPreferenceManager().getSharedPreferences().getLong(PreferenceKeys.KEY_REMIND_ADD_BILL, 0L))));
+            } else if (PreferenceKeys.KEY_ENABLE_REMIND_EXCEEDING.equals(key)) {
                 mRemindExceedingPref.setEnabled((boolean) newValue);
                 mRemindExceedingPref.setSummary(
                         getPreferenceManager().getSharedPreferences().getString(
-                                KEY_REMIND_EXCEEDING, getString(R.string.remind_exceeding_default_summary)));
-            } else if (KEY_VIEW_MODE.equals(key)) {
+                                PreferenceKeys.KEY_REMIND_EXCEEDING, getString(R.string.remind_exceeding_default_summary)));
+            } else if (PreferenceKeys.KEY_VIEW_MODE.equals(key)) {
                 mViewModePref.setSummary(newValue.toString());
-            } else if (KEY_DEFAULT_THEME.equals(key)) {
+            } else if (PreferenceKeys.KEY_DEFAULT_THEME.equals(key)) {
                 mDefaultThemePref.setSummary(newValue.toString());
                 getActivity().recreate();
             }
@@ -191,18 +182,18 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
 
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-            if (KEY_REMIND_EXCEEDING.equals(key)) {
+            if (PreferenceKeys.KEY_REMIND_EXCEEDING.equals(key)) {
                 String value = mRemindExceedingPref.getText();
                 if (TextUtils.isEmpty(value) || Float.parseFloat(value) == 0) {
                     value = getString(R.string.remind_exceeding_default_summary);
                     mRemindExceedingPref.setText(value);
                     getPreferenceManager().getSharedPreferences().edit().putString(
-                            KEY_REMIND_EXCEEDING, value).apply();
+                            PreferenceKeys.KEY_REMIND_EXCEEDING, value).apply();
                     Toast.makeText(getActivity(), R.string.remind_exceeding_empty_tips, Toast.LENGTH_SHORT).show();
                 }
                 mRemindExceedingPref.setSummary(value);
-            } else if (KEY_ENABLE_REMIND_ADD_BILL.equals(key)) {
-                getActivity().sendBroadcast(new Intent("org.xqj.bill.action.NOTIFY_TIME_CHANGED"));
+            } else if (PreferenceKeys.KEY_ENABLE_REMIND_ADD_BILL.equals(key)) {
+                getActivity().sendBroadcast(new Intent("action.NOTIFY_TIME_CHANGED"));
             }
         }
 
@@ -228,8 +219,8 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             Date when = calendar.getTime();
             mRemindAddBillPref.setSummary(DateFormat.getTimeFormat(getActivity()).format(when));
             getPreferenceManager().getSharedPreferences().edit().putLong(
-                    KEY_REMIND_ADD_BILL, when.getTime()).apply();
-            getActivity().sendBroadcast(new Intent("org.xqj.bill.action.NOTIFY_TIME_CHANGED"));
+                    PreferenceKeys.KEY_REMIND_ADD_BILL, when.getTime()).apply();
+            getActivity().sendBroadcast(new Intent("action.NOTIFY_TIME_CHANGED"));
         }
 
         @Override

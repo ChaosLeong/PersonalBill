@@ -1,4 +1,4 @@
-package org.xqj.bill;
+package org.chaos.fx.bill;
 
 import android.app.AlarmManager;
 import android.app.Notification;
@@ -18,8 +18,8 @@ import java.util.Calendar;
  */
 public class AlarmReceiver extends BroadcastReceiver {
 
-    private static final String ACTION_NOTIFY_TIME_CHANGED = "org.xqj.bill.action.NOTIFY_TIME_CHANGED";
-    private static final String ACTION_NOTIFY_ADD_BILL = "org.xqj.bill.action.NOTIFY_ADD_BILL";
+    private static final String ACTION_NOTIFY_TIME_CHANGED = "org.chaos.fx.bill.action.NOTIFY_TIME_CHANGED";
+    private static final String ACTION_NOTIFY_ADD_BILL = "org.chaos.fx.bill.action.NOTIFY_ADD_BILL";
 
     private static final int NOTIFY_ADD_BILL_ID = 1;
 

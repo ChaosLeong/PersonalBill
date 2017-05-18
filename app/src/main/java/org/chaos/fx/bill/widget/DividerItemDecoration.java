@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.xqj.bill.widget;
+package org.chaos.fx.bill.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;

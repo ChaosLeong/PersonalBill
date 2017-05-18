@@ -1,7 +1,7 @@
-package org.xqj.bill.model.serializable;
+package org.chaos.fx.bill.model.serializable;
 
-import org.xqj.bill.model.BillItem;
-import org.xqj.bill.model.ConsumptionType;
+import org.chaos.fx.bill.model.BillItem;
+import org.chaos.fx.bill.model.ConsumptionType;
 
 import java.util.ArrayList;
 import java.util.List;

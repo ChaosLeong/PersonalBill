@@ -1,4 +1,4 @@
-package org.xqj.bill.model;
+package org.chaos.fx.bill.model;
 
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
