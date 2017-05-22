@@ -48,15 +48,13 @@
     <!-- Strings related to Bill -->
     <string name="title_year">年份</string>
     <string name="date_format">%1$s\n%2$s</string>
-    <string name="income_format">收入(元)\n%s</string>
-    <string name="expense_format">支出(元)\n%s</string>
 
     <string name="income">收入</string>
     <string name="expense">支出</string>
     <string name="money">金额</string>
     <string name="note">备注</string>
 
-    <string-array name="default_consumption_type">
+    <string-array name="default_categories">
         <item>一般</item>
         <item>餐饮</item>
         <item>交通</item>
@@ -112,4 +110,13 @@
     <!-- Strings related to notification -->
     <string name="add_bill_title">记账提醒</string>
     <string name="add_bill_content">来记下消费记录吧 O(∩_∩)O~</string>
+
+    <string name="header_year_month_format">yyyy年\nMM月</string>
+    <string name="header_income_format">收入(元)\n%.1f</string>
+    <string name="header_expense_format">支出(元)\n%.1f</string>
+    
+    <string name="month_format">MM月</string>
+    <string name="day_of_month_format">MM月dd日</string>
+    
+    <string name="detail_date_format">yyyy-MM-dd</string>
 </resources>

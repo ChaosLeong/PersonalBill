@@ -27,4 +27,6 @@
     <dimen name="status_text_size">18.0sp</dimen>
     <dimen name="status_padding_top">20.0dip</dimen>
     <dimen name="status_padding_bottom">16.0dip</dimen>
+
+    <dimen name="header_text_padding">16dp</dimen>
 </resources>
