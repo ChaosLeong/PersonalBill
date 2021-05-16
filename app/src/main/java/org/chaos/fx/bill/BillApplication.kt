@@ -1,7 +1,6 @@
 package org.chaos.fx.bill
 
 import android.app.Application
-import org.chaos.fx.bill.PreferenceHelper
 
 /**
  * @author Chaos

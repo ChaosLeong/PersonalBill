@@ -1,7 +1,6 @@
 package org.chaos.fx.bill.data
 
 import android.content.Context
-import android.util.Log
 import io.reactivex.Observable
 
 /**

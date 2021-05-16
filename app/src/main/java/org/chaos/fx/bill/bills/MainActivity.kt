@@ -7,7 +7,6 @@ import android.text.SpannableStringBuilder
 import android.text.format.DateFormat
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
-import android.util.Log
 import android.widget.TextView
 import kotlinx.android.synthetic.main.layout_main_appbar.*
 import org.chaos.fx.bill.R

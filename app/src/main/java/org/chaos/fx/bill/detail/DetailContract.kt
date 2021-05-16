@@ -17,7 +17,7 @@ interface DetailContract {
         fun showNote(note: String)
     }
 
-     interface Presenter : BasePresenter {
+    interface Presenter : BasePresenter {
         fun saveBill(isIncome: Boolean, type: String, sum: Float, timestamp: Long, note: String): Long
     }
 }

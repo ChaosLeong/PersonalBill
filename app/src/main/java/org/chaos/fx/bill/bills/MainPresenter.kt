@@ -5,6 +5,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import org.chaos.fx.bill.data.Bill
 import org.chaos.fx.bill.data.BillsDataSource
+import org.chaos.fx.bill.detail.BillDetailActivity
 import java.util.*
 
 /**

@@ -11,7 +11,7 @@ import org.chaos.fx.bill.data.Bill
 
 interface BillsContract {
     interface Presenter : BasePresenter {
-        fun loadBillsByYearAndMonth(year:Int, month: Int)
+        fun loadBillsByYearAndMonth(year: Int, month: Int)
         fun deleteBill(bill: Bill)
         fun updatedBill(id: Long)
         fun addedBill(id: Long)
